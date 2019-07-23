@@ -17,6 +17,6 @@ public class Order {
     @OneToMany
     List<Product> productList;
 
-    @Column(name = "adress", nullable = false)
-    private String adress;
+    @Column(name = "address", nullable = false)
+    private String address;
 }
