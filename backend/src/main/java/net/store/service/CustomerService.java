@@ -15,4 +15,11 @@ public interface CustomerService {
     Customer findCustomerByUsername(String username);
 
     Customer findCustomerById(long id);
+
+    Customer findCustomerByEmail(String email);
+
+    List<Customer> findCustomerByFirstName(String firstName);
+
+    List<Customer> findCustomerBySecondName(String secondName);
+
 }
