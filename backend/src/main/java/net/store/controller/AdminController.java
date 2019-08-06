@@ -19,7 +19,7 @@ public class AdminController {
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping("/admin")
-    public String adminPage(Model model){
+    public String getAllCustomers(Model model){
         model.addAttribute("allCustomers", customerService.findAll());
         return "/admin";
     }
@@ -46,6 +46,12 @@ public class AdminController {
     @RequestMapping(value = "{id}/delete", method = RequestMethod.GET)
     public String deleteCustomer(@PathVariable("id") Long id){
         customerService.deleteCustomerById(id);
+        return "redirect:/admin";
+    }
+
+    @PostMapping("/findCustomer")
+    public String findCustomer(@RequestParam long id){
+        customerService.findCustomerById(id);
         return "redirect:/admin";
     }
 

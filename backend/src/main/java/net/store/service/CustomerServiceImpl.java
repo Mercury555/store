@@ -32,4 +32,9 @@ public class CustomerServiceImpl implements CustomerService{
     public Customer findCustomerByUsername(String username) {
         return repository.findByUsername(username);
     }
+
+    @Override
+    public Customer findCustomerById(long id) {
+        return repository.findById(id).get();
+    }
 }
