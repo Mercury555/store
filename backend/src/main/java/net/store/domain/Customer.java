@@ -3,6 +3,8 @@ package net.store.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.store.domain.enums.Role;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,16 +23,19 @@ public class Customer {
     private String firstName;
 
     @Column(name = "second_name", nullable = false)
-    private String secondtName;
+    private String secondName;
 
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "login", nullable = false)
-    private String login;
+    @Column(name = "username", nullable = false)
+    private String username;
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "role", nullable = false)
+    private Role role;
 
     private List<Order> orderList;
 

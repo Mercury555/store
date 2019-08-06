@@ -4,8 +4,7 @@ CREATE TABLE customers (
   lastName  VARCHAR(20)  NOT NULL,
   email     VARCHAR(100) NOT NULL,
   login     VARCHAR(30)  NOT NULL,
-  password  VARCHAR(30)  NOT NULL
-
+  password  VARCHAR(255)  NOT NULL
 );
 
 CREATE TABLE products (
