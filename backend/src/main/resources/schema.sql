@@ -5,7 +5,6 @@ CREATE TABLE customers (
   email     VARCHAR(100) NOT NULL,
   login     VARCHAR(30)  NOT NULL,
   password  VARCHAR(30)  NOT NULL
-
 );
 
 CREATE TABLE products (
