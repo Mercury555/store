@@ -26,9 +26,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Customer customer =customerService.findCustomerByUsername(username);
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         grantedAuthorities.add(new SimpleGrantedAuthority(customer.getRole().name()));
-        return new User(customer.getUsername(),passwordEncoder.encode(customer.getPassword()),grantedAuthorities);
+        return new User(customer.getUsername(),bCryptPasswordEncoder.encode(customer.getPassword()),grantedAuthorities);
     }
 }
