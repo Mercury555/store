@@ -35,6 +35,7 @@ public class Customer {
     private String password;
 
     @Column(name = "role", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     private List<Order> orderList;

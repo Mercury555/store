@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -14,17 +16,22 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
-    @GetMapping(value = "/products", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+    @GetMapping()
 
-    public Page<Product> getAll(@RequestParam(value = "pageNumber", defaultValue = "0") int page,
-                                @RequestParam(value = "pageSize", defaultValue = "10") int limit,
-                                @RequestParam(value = "order", defaultValue = "id") String orderBy) {
+//    public Page<Product> getAll(@RequestParam(value = "pageNumber", defaultValue = "0") int page,
+//                                @RequestParam(value = "pageSize", defaultValue = "10") int limit,
+//                                @RequestParam(value = "order", defaultValue = "id") String orderBy) {
+//
+//        Page<Product> list = service.getAll(page, limit, orderBy);
+//
+//        return (Page) list.getContent();
+//    }
+    public List<Product> getAll() {
 
-        Page<Product> list = service.getAll(page, limit, orderBy);
 
-        return (Page) list.getContent();
+
+        return service.getAll();
     }
-
     @GetMapping("/count")
     public Long getCount() {
         return service.getCount();
