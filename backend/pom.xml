@@ -21,7 +21,7 @@
     </build>
 
     <properties>
-        <spring.securiry>5.0.2.RELEASE</spring.securiry>
+        <spring.securiry>5.3.3.RELEASE</spring.securiry>
     </properties>
 
     <dependencies>
